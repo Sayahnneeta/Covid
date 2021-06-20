@@ -1,20 +1,23 @@
   
    $(document).ready(function ()
    {
-       var state = "Assam";
-        getState(state);
+       let state='Assam';
        $('.buttons').on('click', function (event)    
        {
            event.preventDefault();
            console.log($('.searchBox').val());
-           if ($('.searchBox').val() != "")
-           var state = $('.searchBox').val();
-           console.log($('.searchBox').val());
-           event.stopPropagation();
-           getState(state);
+           if ($('.searchBox').val() != ""){
+              state = $('.searchBox').val();
+              console.log($('.searchBox').val());
+              localStorage.setItem('state',$('.searchBox').val());
+           }
+           location.href = '/api.html';
         });
+        // getState(state);
+        getState(localStorage.getItem('state'));
+
      });
-        getState = function(state)
+          getState = function(state)
          {
              let user_input =state;
              let date;
@@ -50,17 +53,18 @@
                      <td>${data2.statewise[i].recovered}</td>
                       `
                    $("#data2").html(data2)
-               });
+
+                  });
+                  function refreshData2()
+                    {
+                      clearData2()
+                      getState(state)
+                    }
+                    function clearData2() 
+                     {
+                        $("#data2").empty()
+                     }
             
-               function refreshData2()
-                 {
-                   clearData2()
-                   getState(state)
-                 }
-                 function clearData2() 
-                  {
-                     $("#data2").empty()
-                  }
             }
             
      
