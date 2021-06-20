@@ -11,14 +11,16 @@
     <script src="script.js"></script>
 </head>
 <style>
-    body {
+    body
+     {
         background-image: url('bg.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         color: white;
     }
 
-    .table {
+    .table
+     {
         color: white;
     }
 </style>
@@ -32,18 +34,17 @@
             <thead>
                 <tr>
                     <th>State</th>
+                    <th>Last Updated</th>
                     <th>Total Cases</th>
                     <th>Active Cases</th>
-                    <!-- active cases= total cases-recovered-death -->
                     <th>Total Deaths</th>
-                    <!-- <th>New Deaths</th> -->
                     <th>Total Recovered</th>
-                    <!-- <th>New Recovered</th> -->
+        
                 </tr>
             </thead>
             <tbody>
                 <tr id="data2"></tr>
-                </tr>
+    
             </tbody>
         </table>
         <br>
@@ -52,72 +53,4 @@
         </button>
     </div>
 </body>
-
-<script>
-    //  $(document).ready(function()
-    //  {
-    init()
-    function init() {
-        var url = "https://api.covid19api.com/summary"
-        var data = ''
-        $.get(url, function (data) {
-            console.log(data.Countries[76])
-            data = `
-                <td>${data.Global.TotalConfirmed}</td>
-                <td>${data.Global.NewConfirmed}</td>
-                <td>${data.Global.TotalDeaths}</td>  
-                <td>${data.Global.TotalRecovered}</td>
-             
-                `
-            $("#data").html(data)
-        })
-    }
-    function refreshData() {
-        clearData()
-        init()
-
-    }
-    function clearData() {
-        $("#data").empty()
-    }
-    //statewise count
-    init2()
-    function init2() {
-        var url = "https://api.covid19india.org/data.json"
-        var data2 = ''
-        $.get(url, function (data2) {
-            console.log(data2.statewise)
-            let i = data2.statewise;
-            for (i = 1; i < 38; i++) {
-                console.log(data2.statewise[i].state);
-                console.log(data2.statewise[i].lastupdatedtime);
-                console.log(data2.statewise[i].confirmed);
-                console.log(data2.statewise[i].active);
-                console.log(data2.statewise[i].deaths);
-                console.log(data2.statewise[i].recovered);
-
-            }
-
-            data2 = `
-                 <td>${data2.statewise[i].state}</td>
-                 <td>${data.statewise[i].lastupdatedtime}</td>
-                 <td>${data.statewise[i].confirmed}</td>
-                 <td>${data.statewise[i].active}</td>
-                 <td>${data.statewise[i].deaths}</td>
-                 <td>${data.statewise[i].recovered}</td>
-                `
-            $("#data2").html(data2)
-        })
-    }
-    function refreshData2() {
-        clearData2()
-        init2()
-
-    }
-    function clearData2() {
-        $("#data2").empty()
-    }
-
-</script>
-
 </html>

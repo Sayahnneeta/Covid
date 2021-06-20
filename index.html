@@ -16,22 +16,29 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
-    <div class="container">
+         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+           crossorigin="anonymous"></script>
+     <div class="container">
         <div class="slide"></div>
-        <div class=" left">
-            <h1>&nbsp;&nbsp;FIGHT <br> COVID 19</h1>
+           <div class=" left">
+               <h1>&nbsp;&nbsp;FIGHT <br> COVID 19</h1>
 
-            <p class="sub-heading"> Keep up to date on the latest information from<br> trusted sources,such as WHO or
+               <p class="sub-heading"> Keep up to date on the latest information from<br> trusted sources,such as WHO or
                 your local and<br> national
                 health authorities</p>
-        </div>
+          </div>
 
-        <div class=middle>
+        <div class="middle">
             <form>
                 <input type="text" class="searchBox" placeholder="Search your city">
-                <button class="buttons"><a href="api.html" style="color:black"> SEARCH</a></button>
+             <div>
+                 <a href="api.html"></a>
+             </div>   
+            <button class="buttons"  onclick="location.href='/api.html',getState();" type="button">
+                <a href="/api.html" style="color:black"> SEARCH</a></button> 
+                    <!-- function (); -->
+                    <!-- <button class="buttons" ><a href="/api.html" style="color:black"> SEARCH</a></button>  -->
+
             </form>
         </div>
 
