@@ -45,13 +45,13 @@ $(document).ready(function ()
                          break;
                        }
                    }
-                   var x=date;
-                  var x2=x.replaceAll('/'," ");
-                  if(x2=" ")
-                  {
-                    x2-1;            
-                  }
-                  //  var x2=x.split("")
+//                    var x=date;
+//                   var x2=x.replaceAll('/'," ");
+//                   if(x2=" ")
+//                   {
+//                     x2-1;            
+//                   }
+//                   //  var x2=x.split("")
                    
                    console.log(x2);
                  data2 = `
