@@ -7,7 +7,7 @@
     padding: 0px;
     box-sizing: inherit;  
     font-family: 'Staatliches',sans-serif; 
-    /* text-transform: capitalize; */
+    text-transform: capitalize;
 }
 body
 {   
